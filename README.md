@@ -25,5 +25,5 @@ Edit the "frequency.txt" file and put ONLY your desired number of seconds betwee
 
 ## Requirements
 
-PyQt5==5.12.2
-PyQt5-sip==4.19.17
+ - PyQt5==5.12.2
+ - PyQt5-sip==4.19.17
