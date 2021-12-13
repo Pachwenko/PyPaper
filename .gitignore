@@ -153,5 +153,4 @@ cython_debug/
 
 
 # project stuff
-chromedriver.exe
-database.db
+output.jpg
