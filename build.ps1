@@ -1,0 +1,1 @@
+python -OO -m PyInstaller pypaper.py --nowindowed --noconsole -F -p .venv/Lib/site-packages
