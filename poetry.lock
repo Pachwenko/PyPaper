@@ -29,7 +29,7 @@ python-versions = ">=3.5"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "065c2f07ae26d40e7c003dfdb2ec316b8daf84c9e3d9b30d52f682956254465a"
+content-hash = "948086bcfccc2cb0cd6436c729b38bf5ab3b47058f408494e869f135c017744f"
 
 [metadata.files]
 pyqt5 = [

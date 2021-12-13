@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-PyQt5 = "^5.15.6"
+PyQt5 = "^5.12.2"
 
 [tool.poetry.dev-dependencies]
 
