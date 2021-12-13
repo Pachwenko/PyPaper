@@ -275,4 +275,4 @@ if __name__ == '__main__':
     main()
 
 # to export with pyinstaller, add the pipenv path bin to search:
-# 'python -OO -m PyInstaller main.py --nowindowed --noconsole -F -p .venv/Lib/site-packages'
+# 'python -OO -m PyInstaller pypaper.py --nowindowed --noconsole -F -p .venv/Lib/site-packages'
