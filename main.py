@@ -3,10 +3,11 @@ from os.path import abspath
 from os import remove
 from urllib.request import urlretrieve
 from time import time
-from threading import Timer, Thread, Event
+from threading import Timer
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+
 
 import sqlite3
 import random
@@ -21,6 +22,7 @@ database_filepath = 'database.db'
 database_args = detect_types = sqlite3.PARSE_DECLTYPES
 last_used = default_tables
 frequency = 900
+timer = None
 
 
 def random_wallpaper(tables):
@@ -133,7 +135,11 @@ def yosemite():
 
 
 def close_app():
-    remove(abspath(output_filepath))
+    try:
+        remove(abspath(output_filepath))
+    except:
+        pass
+    timer.cancel()
     QCoreApplication.exit()
 
 
@@ -252,13 +258,13 @@ def main():
         global frequency
         data = file.read()
         frequency = int(data)
-        if frequency is not 900:
-            found = True
+        found = True
 
     if not found:
         with open('frequency.txt', 'w+') as file:
             file.write(str(frequency))
 
+    global timer
     timer = PerpetualTimer(frequency, default_paper)
     timer.start()
     app.exec_()
@@ -269,4 +275,4 @@ if __name__ == '__main__':
     main()
 
 # to export with pyinstaller, add the pipenv path bin to search:
-# 'python -OO -m PyInstaller main.py --nowindowed --noconsole -F -p venv/Lib/site-packages'
+# 'python -OO -m PyInstaller main.py --nowindowed --noconsole -F -p .venv/Lib/site-packages'
